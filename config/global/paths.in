@@ -142,7 +142,7 @@ config TARBALL_RESULT
     bool
     depends on EXPERIMENTAL
     prompt "Create binary toolchain tarball"
-    default n
+    default y
     help
       Create tarball of the final binary toolchain.
 
@@ -152,7 +152,7 @@ config TARBALL_RESULT_DIR
     string
     depends on TARBALL_RESULT
     prompt "Output directory"
-    default "${CT_TOP_DIR}"
+    default "${CT_PREFIX:-${HOME}/.local/bin/xtools}"
     help
       Directory where tarball will be created.
 
