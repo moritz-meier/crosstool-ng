@@ -5,13 +5,13 @@ comment "Downloading"
 choice
     prompt "Download agent"
 
-config DOWNLOAD_AGENT_WGET
-    bool "wget"
-    depends on CONFIGURE_has_wget
-
 config DOWNLOAD_AGENT_CURL
     bool "curl"
     depends on CONFIGURE_has_curl
+
+config DOWNLOAD_AGENT_WGET
+    bool "wget"
+    depends on CONFIGURE_has_wget
 
 config DOWNLOAD_AGENT_NONE
     bool "none (forbid download)"

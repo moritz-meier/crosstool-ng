@@ -17,6 +17,7 @@ config OBSOLETE
 
 config EXPERIMENTAL
     bool
+	default y
     prompt "Try features marked as EXPERIMENTAL"
     help
       If you set this to Y, then you will be able to try very experimental
