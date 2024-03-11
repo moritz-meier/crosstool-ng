@@ -5,7 +5,7 @@ comment "Paths"
 config LOCAL_TARBALLS_DIR
     string
     prompt "Local tarballs directory"
-    default "${HOME}/.xtools/tarballs"
+    default "${HOME}/.cache/crosstool-ng/tarballs"
     help
       If you have previously downloaded the tarballs, enter the PATH where
       you stored them here.
@@ -21,6 +21,7 @@ config SAVE_TARBALLS
 
 config TARBALLS_BUILDROOT_LAYOUT
     bool "Prefer buildroot-style layout of the downloads"
+    default y
     help
       Buildroot switched the layout of its downloads directory to place
       files for each package into a subdirectory named after that package.
@@ -62,7 +63,7 @@ config BUILD_DIR
 config PREFIX_DIR
     string
     prompt "Prefix directory"
-    default "${CT_PREFIX:-${HOME}/.local/bin/xtools}/${CT_HOST:+HOST-${CT_HOST}/}${CT_TARGET}"
+    default "${CT_PREFIX:-${HOME}/.local/bin/xtools${CT_TOOLCHAIN_PKGVERSION:+/${CT_TOOLCHAIN_PKGVERSION}}}/${CT_HOST:+HOST-${CT_HOST}/}${CT_TARGET}"
     help
       This is the path the toolchain will run from.
 
@@ -152,7 +153,7 @@ config TARBALL_RESULT_DIR
     string
     depends on TARBALL_RESULT
     prompt "Output directory"
-    default "${CT_PREFIX:-${HOME}/.local/bin/xtools}"
+    default "${CT_PREFIX:-${HOME}/.local/bin/xtools${CT_TOOLCHAIN_PKGVERSION:+/${CT_TOOLCHAIN_PKGVERSION}}}"
     help
       Directory where tarball will be created.
 
