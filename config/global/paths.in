@@ -5,7 +5,7 @@ comment "Paths"
 config LOCAL_TARBALLS_DIR
     string
     prompt "Local tarballs directory"
-    default "${HOME}/.cache/crosstool-ng/tarballs"
+    default "${HOME}/.cache/xtools/tarballs"
     help
       If you have previously downloaded the tarballs, enter the PATH where
       you stored them here.
